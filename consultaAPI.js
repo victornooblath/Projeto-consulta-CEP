@@ -1,11 +1,11 @@
 'use strict';
 
 // fill fields function
-const preencherForm = (endereco) => {
-	document.getElementById('endereco').value = endereco.logradouro;
-	document.getElementById('bairro').value = endereco.bairro;
-	document.getElementById('cidade').value = endereco.localidade;
-	document.getElementById('estado').value = endereco.uf;
+const preencherForm = (destinatario) => {
+	document.getElementById('destinatario').value = destinatario.logradouro;
+	document.getElementById('bairro').value = destinatario.bairro;
+	document.getElementById('cidade').value = destinatario.localidade;
+	document.getElementById('estado').value = destinatario.uf;
 }
 
 // clear fields function
@@ -15,8 +15,8 @@ const limparCampos = () => {
 	document.getElementById('estado').value = ''
 }
 
-// cep is valid? function
-const cepIsValid = (cep) => cep.length == 8 && /^[0-9]+$/.test(cep);
+// is cep valid? function
+const isCepValid = (cep) => cep.length == 8 && /^[0-9]+$/.test(cep);
 
 function hideSpinner() {
     document.getElementById('spinner')
@@ -34,21 +34,21 @@ const pesquisarCep = async() => {
 	const url = `https://viacep.com.br/ws/${cep}/json/`;
 	showSpinner()
 	
-	if(cepIsValid(cep)){
+	if(isCepValid(cep)){
 		// fetching data from API
 		const dados = await fetch(url);
-		const endereco = await dados.json()
+		const destinatario = await dados.json()
 		
-		if(endereco.hasOwnProperty('erro')){
-			document.getElementById('endereco').value = 'erro! CEP não encontrado!'
+		if(destinatario.hasOwnProperty('erro')){
+			document.getElementById('destinatario').value = 'erro! CEP não encontrado!'
 			limparCampos()
 			hideSpinner();
 		}else {
-			preencherForm(endereco);
+			preencherForm(destinatario);
 			hideSpinner();
 		}
 	}else{
-		document.getElementById('endereco').value = 'erro! CEP inválido'
+		document.getElementById('destinatario').value = 'erro! CEP inválido'
 		limparCampos()
 		hideSpinner();
 	}
