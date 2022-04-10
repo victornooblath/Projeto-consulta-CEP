@@ -1,16 +1,60 @@
 body{
-    background-image: url(./img/site-bg.webp);
-
+   background-image: url(./img/background.webp);
 }
+
 form {
-    background-color: whitesmoke;
+    background-color: lightgray;
+    border: ridge;
     border-radius: 5px;
     box-shadow: 2px 2px 7px 10px #888888;
+    background-color: rgb(237, 212, 212);
 }
-
+    
 .img-responsive {
     flex: auto;
     height: 30px;
     width: auto;
     image-rendering: auto;
+    margin-bottom: 4px;
 }
+
+label{
+   color: black;
+    font-family: Arial;
+    font-size: large;
+}
+
+#cep{
+    border: outset;
+    border-radius: 40px;
+    width: 120px;
+    height: 20px; 
+    padding: 18px;
+}
+
+.col-md-6 #endereco, #bairro, #cidade, #estado{
+    border: solid 1px;
+}
+    
+
+#space  {
+   border-bottom: 2px solid black ;
+   white-space: nowrap;
+   width: 125px;
+}
+   
+   
+
+
+    
+
+    
+    
+
+    
+    
+
+
+    
+
+

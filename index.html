@@ -15,7 +15,9 @@
 
 		<!-- CEP search bar -->
 		<section name="CEP search bar">
-			<h1 class="title text-center">Consultas de CEP</h1>
+			<h1 class="title text-center">Consultas de CEP 
+				<img src="./img/lupa2.png" class="img-responsive"> 
+			</h1>
 			<div class="row">
 				<div class="col-12">
 					<div class="inputbox">
@@ -24,7 +26,12 @@
 					</div>
 				</div>
 				<div class="col-6 my-3">
-					<button class="btn btn-primary" onclick="pesquisarCep()">Consultar CEP</button>
+					
+					<div id="space">
+						<button class="btn btn-primary" onclick="pesquisarCep()">Consultar CEP</button>
+					</div>
+
+					
 					<!-- spinner -->
 					<div  id="spinner" class="spinner-border mx-3 mt-3" role="status">
 						<span class="visually-hidden">Loading...</span>
